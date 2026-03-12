@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDENT HELP DESK - Kongu Engineering College</title>
+
+  <style>
+    :root{
+      --kongu-green:#2aab64;
+      --kongu-green-dark:#084f2b;
+      --kongu-gold:#d4a017;
+      --text:#1f2d1f;
+      --muted:#179c38;
+      --border:#366336;
+      --shadow:0 25px 60px rgba(187, 226, 195, 0.067);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      min-height:100vh;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background-image: linear-gradient(rgba(186, 216, 203, 0), rgba(234, 241, 236, 0.078)), url('images/college-entrance.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+    }
+
+    .page-wrap{
+      width:100%;
+      max-width:1200px;
+      display:grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap:0;
+      box-shadow: var(--shadow);
+      border-radius: 30px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .brand-panel{
+      background:linear-gradient(145deg, var(--kongu-green) 0%, var(--kongu-green-dark) 100%);
+      padding:50px;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .logo-badge{
+      width:180px;
+      height:180px;
+      border-radius:30px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--kongu-green);
+      margin-bottom:40px;
+      padding: 15px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo-badge img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .logo-badge:hover img{
+      transform: scale(1.1);
+    }
+
+    .brand-title{
+      font-size:2.8rem;
+      font-weight:900;
+      line-height:1.1;
+      margin-bottom:20px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .brand-subtitle{
+      font-size:1.2rem;
+      line-height:1.6;
+      color:rgba(255,255,255,0.9);
+      margin-bottom: 40px;
+    }
+
+    .feature-list{
+      list-style:none;
+      display:grid;
+      gap:20px;
+    }
+
+    .feature-list li{
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      gap:15px;
+      font-size:1.1rem;
+    }
+
+    .tick{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+
+    .form-card{
+      background: #fff;
+      padding:60px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .form-header{
+      margin-bottom:40px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(25, 29, 27, 0.1);
+      color:var(--kongu-green);
+      padding:10px 20px;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:800;
+      margin-bottom:20px;
+      text-transform: uppercase;
+    }
+
+    .form-header h2{
+      font-size:2.5rem;
+      font-weight:800;
+      color:var(--text);
+      margin-bottom:10px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .field.full{
+      grid-column:1 / -1;
+    }
+
+    .field label{
+      font-size:1.1rem;
+      font-weight:700;
+      color:var(--kongu-green-dark);
+    }
+
+    input, textarea, select{
+      width:100%;
+      border:2px solid var(--border);
+      background:#fdfdfd;
+      border-radius:15px;
+      padding:18px 20px;
+      font-size:1.1rem;
+      transition:all 0.3s ease;
+      outline:none;
+    }
+
+    textarea{
+      min-height:180px;
+      line-height: 1.6;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      border-color:var(--kongu-green);
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(11, 107, 58, 0.1);
+    }
+
+    .actions{
+      display:flex;
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .submit-btn, .reset-btn{
+      border:none;
+      border-radius:15px;
+      padding:20px 40px;
+      font-size:1.2rem;
+      font-weight:800;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    .submit-btn{
+      flex:2;
+      background: var(--kongu-green);
+      color:#fff;
+    }
+
+    .submit-btn:hover{
+      background: var(--kongu-green-dark);
+      transform: translateY(-3px);
+    }
+
+    .reset-btn{
+      flex:1;
+      background: var(--kongu-green);
+      color:#fff;
+    }
+
+    .reset-btn:hover{
+      background: var(--kongu-green-dark);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 1000px){
+      .page-wrap{
+        grid-template-columns:1fr;
+      }
+      .brand-panel{ padding: 40px; }
+      .form-card { padding: 40px; }
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(6, 30, 16, 0.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      z-index:9999;
+    }
+
+    .modal.show{
+      display:flex;
+    }
+
+    .modal-card{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 30px 60px rgba(0,0,0,0.18);
+      padding:32px 26px;
+      text-align:center;
+    }
+
+    .success-icon{
+      width:78px;
+      height:78px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      background:linear-gradient(135deg, rgba(11,107,58,0.12), rgba(212,160,23,0.18));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    iframe[name="hidden_iframe"]{
+      display:none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrap">
+    <section class="brand-panel">
+      <div class="brand-top">
+        <div class="logo-badge">
+          <img src="data:image/png;base64,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" alt="Kongu Engineering College" style="width: 251px; height: 201; " />
+          <svg viewBox="0 0 24 24" width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <path d="M4 19h16"></path>
+            <path d="M6 17V7l6-3 6 3v10"></path>
+            <path d="M9 11h6"></path>
+            <path d="M12 8v6"></path>
+          </svg>
+        </div>
+
+        <h1 class="brand-title">STUDENT <br>HELP DESK</h1>
+        <p class="brand-subtitle">
+          Official Support Portal for Kongu Engineering College.
+          Powered by Salesforce Service Cloud for instant resolution.
+        </p>
+
+        <ul class="feature-list">
+          <li>
+            <span class="tick">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="3">
+                <path d="M5 12l5 5 9-9"></path>
+              </svg>
+            </span>
+            Direct Routing to Departments
+          </li>
+          <li>
+            <span class="tick">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="3">
+                <path d="M5 12l5 5 9-9"></path>
+              </svg>
+            </span>
+            24/7 Automated Case Tracking
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <div class="form-header">
+        <div class="badge">KEC Support System</div>
+        <h2>Raise a Request</h2>
+      </div>
+
+      <form id="supportForm" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL00000KCzLx" method="POST" target="hidden_iframe">
+       
+        <input type="hidden" name="orgid" value="00DgL00000KCzLx">
+        <input type="hidden" name="retURL" value="http://kongu.ac.in">
+        <input type="hidden" name="external" value="1" />
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Contact Name</label>
+            <input name="name" type="text" placeholder="Your Full Name" required />
+          </div>
+
+          <div class="field">
+            <label>Roll Number</label>
+            <input name="00NgL00003He9E9" type="text" placeholder="e.g. 24MCR041" required />
+          </div>
+
+          <div class="field">
+            <label>College Email</label>
+            <input name="email" type="email" placeholder="student@kongu.edu" required />
+          </div>
+
+          <div class="field">
+            <label>Phone Number</label>
+            <input name="phone" type="text" placeholder="+91 XXXX XXX XXX" />
+          </div>
+
+          <div class="field">
+            <label>Student Department</label>
+            <select name="student_dept" required>
+              <option value="">-- Select Your Dept --</option>
+              <option value="CIVIL">Civil Engineering</option>
+              <option value="MECH">Mechanical Engineering</option>
+              <option value="MTS">Mechatronics Engineering</option>
+              <option value="ECE">ECE</option>
+              <option value="CSE">CSE</option>
+              <option value="IT">Information Technology</option>
+              <option value="EEE">EEE</option>
+              <option value="EIE">EIE</option>
+              <option value="CHEM">Chemical Engineering</option>
+              <option value="FT">Food Technology</option>
+              <option value="AUTO">Automobile Engineering</option>
+              <option value="AIDS">AI & Data Science</option>
+              <option value="AIML">AI & Machine Learning</option>
+              <option value="MBA">MBA</option>
+              <option value="MCA">MCA</option>
+            </select>
+          </div>
+
+           <div class="field full">
+            <label>Department to Contact</label>
+            <select name="00N5i00000YYYYY">
+              <option value="">-- Let the system decide --</option>
+              <option value="COE">COE - Examination</option>
+              <option value="FEES">Fees</option>
+              <option value="ADMIN">Administrative Office</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label>Subject</label>
+            <input name="subject" type="text" placeholder="Briefly describe the issue" required />
+          </div>
+
+          <div class="field full">
+            <label>Detailed Description</label>
+            <textarea name="description" placeholder="Provide as much detail as possible to help us resolve your issue faster..." required></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+          <button type="reset" class="reset-btn">CLEAR</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <iframe name="hidden_iframe" title="hidden_iframe"></iframe>
+
+  <div class="modal" id="successModal">
+    <div class="modal-card">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#0b6b3a" stroke-width="3">
+          <path d="M5 12l5 5 9-9"></path>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Ticket Received!</h3>
+      <p style="font-size: 1.1rem; color: #666;">Your support request has been logged in Salesforce. Check your college email for the ticket number.</p>
+      <div class="modal-actions" style="margin-top: 25px;">
+        <button class="close-btn" id="closeModalBtn" style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold; background: #0b6b3a; color: white; border: none; border-radius: 10px; cursor: pointer;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('supportForm');
+    const modal = document.getElementById('successModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    form.addEventListener('submit', function () {
+      setTimeout(function () {
+        modal.classList.add('show');
+        form.reset();
+      }, 800);
+    });
+
+    closeModalBtn.addEventListener('click', function () {
+      modal.classList.remove('show');
+      window.location.reload();
+    });
+  </script>
+
+</body>
+</html>
