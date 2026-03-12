@@ -52,27 +52,50 @@
 
     .brand-panel{
       background:linear-gradient(145deg, var(--kongu-green) 0%, var(--kongu-green-dark) 100%);
-      padding:60px 40px;
+      padding:60px 50px;
       color:#fff;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       text-align:center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('images/college-entrance.png') center/cover;
+      opacity: 0.1;
+      filter: grayscale(1);
+    }
+
+    .brand-top {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo-badge{
-      width:180px;
-      height:180px;
-      border-radius:30px;
+      width:240px;
+      height:100px;
+      border-radius:20px;
       background:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
       color:var(--kongu-green);
-      margin-bottom:40px;
-      padding: 15px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+      margin-bottom:30px;
+      padding: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.1);
     }
@@ -131,13 +154,14 @@
 
     .form-card{
       background: #fff;
-      padding:40px 50px;
+      padding:50px 60px;
       display:flex;
       flex-direction:column;
+      justify-content: center;
     }
 
     .form-header{
-      margin-bottom:40px;
+      margin-bottom:35px;
     }
 
     .badge{
@@ -310,8 +334,8 @@
     <section class="brand-panel">
       <div class="brand-top">
         <div class="logo-badge">
-          <img src="data:image/png;base64,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" alt="Kongu Engineering College" />
-          <svg viewBox="0 0 24 24" width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+          <img src="images/logo.jpg" alt="Kongu Engineering College" />
+          <svg viewBox="0 0 24 24" width="5" height="45" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
             <path d="M4 19h16"></path>
             <path d="M6 17V7l6-3 6 3v10"></path>
             <path d="M9 11h6"></path>
