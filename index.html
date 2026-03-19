@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
@@ -8,58 +7,58 @@
   <title>STUDENT HELP DESK - Kongu Engineering College</title>
 
   <style>
-    :root {
-      --kongu-green: #2aab64;
-      --kongu-green-dark: #084f2b;
-      --kongu-gold: #d4a017;
-      --text: #1f2d1f;
-      --muted: #179c38;
-      --border: #366336;
-      --shadow: 0 25px 60px rgba(187, 226, 195, 0.067);
+    :root{
+      --kongu-green:#2aab64;
+      --kongu-green-dark:#084f2b;
+      --kongu-gold:#d4a017;
+      --text:#1f2d1f;
+      --muted:#179c38;
+      --border:#366336;
+      --shadow:0 25px 60px rgba(187, 226, 195, 0.067);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    body {
-      min-height: 80vh;
+    body{
+      min-height:100vh;
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
+      color:var(--text);
       background-image: linear-gradient(rgba(186, 216, 203, 0), rgba(234, 241, 236, 0.078)), url('images/college-entrance.png');
       background-size: cover;
       background-position: center right 25%;
       background-attachment: fixed;
       background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      padding: 40px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
     }
 
-    .page-wrap {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 0;
+    .page-wrap{
+      width:100%;
+      max-width:900px;
+      display:grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap:0;
       box-shadow: var(--shadow);
       border-radius: 30px;
       overflow: hidden;
       background: #fff;
     }
 
-    .brand-panel {
-      background: linear-gradient(145deg, var(--kongu-green) 0%, var(--kongu-green-dark) 100%);
-      padding: 60px 50px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    .brand-panel{
+      background:linear-gradient(145deg, var(--kongu-green) 0%, var(--kongu-green-dark) 100%);
+      padding:60px 50px;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
       position: relative;
       overflow: hidden;
     }
@@ -85,296 +84,258 @@
       align-items: center;
     }
 
-    .logo-badge {
-      width: 280px;
-      height: 115px;
-      border-radius: 20px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--kongu-green);
-      margin-bottom: 30px;
-      padding: 18px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    .logo-badge{
+      width:320px;
+      height:130px;
+      border-radius:25px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--kongu-green);
+      margin-bottom:40px;
+      padding: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .logo-badge img {
+    .logo-badge img{
       width: 100%;
       height: 100%;
       object-fit: contain;
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .logo-badge:hover img {
+    .logo-badge:hover img{
       transform: scale(1.1);
     }
 
-    .brand-title {
-      font-size: 2.5rem;
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 15px;
+    .brand-title{
+      font-size:2.8rem;
+      font-weight:900;
+      line-height:1.1;
+      margin-bottom:20px;
       text-transform: uppercase;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
     }
 
-    .brand-subtitle {
-      font-size: 1.05rem;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 35px;
-      padding: 0 10px;
+    .brand-subtitle{
+      font-size:1.2rem;
+      line-height:1.6;
+      color:rgba(255,255,255,0.9);
+      margin-bottom: 40px;
     }
 
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 20px;
+    .feature-list{
+      list-style:none;
+      display:grid;
+      gap:20px;
     }
 
-    .feature-list li {
-      display: flex;
-      align-items: center;
+    .feature-list li{
+      display:flex;
+      align-items:center;
       justify-content: center;
-      gap: 15px;
-      font-size: 1.1rem;
+      gap:15px;
+      font-size:1.1rem;
     }
 
-    .tick {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    .tick{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
     }
 
-    .form-card {
+    .form-card{
       background: #fff;
-      padding: 45px 55px;
-      display: flex;
-      flex-direction: column;
+      padding:50px 60px;
+      display:flex;
+      flex-direction:column;
       justify-content: center;
     }
 
-    .form-header {
-      margin-bottom: 25px;
+    .form-header{
+      margin-bottom:35px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(25, 29, 27, 0.1);
-      color: var(--kongu-green);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 800;
-      margin-bottom: 15px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(25, 29, 27, 0.1);
+      color:var(--kongu-green);
+      padding:10px 20px;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:800;
+      margin-bottom:20px;
       text-transform: uppercase;
     }
 
-    .form-header h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 5px;
+    .form-header h2{
+      font-size:2.5rem;
+      font-weight:800;
+      color:var(--text);
+      margin-bottom:10px;
     }
 
-    .form-grid {
-      display: grid;
+    .form-grid{
+      display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap:20px;
     }
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
 
-    .field.full {
-      grid-column: 1 / -1;
+    .field.full{
+      grid-column:1 / -1;
     }
 
-    .field label {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--kongu-green-dark);
+    .field label{
+      font-size:1.1rem;
+      font-weight:700;
+      color:var(--kongu-green-dark);
     }
 
-    input,
-    textarea,
-    select {
-      width: 100%;
-      border: 1.5px solid var(--border);
-      background: #fdfdfd;
-      border-radius: 10px;
-      padding: 12px 15px;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      outline: none;
+    input, textarea, select{
+      width:100%;
+      border:1.5px solid var(--border);
+      background:#fdfdfd;
+      border-radius:12px;
+      padding:14px 18px;
+      font-size:1rem;
+      transition:all 0.3s ease;
+      outline:none;
     }
 
-    textarea {
-      min-height: 120px;
-      line-height: 1.5;
+    textarea{
+      min-height:180px;
+      line-height: 1.6;
       resize: vertical;
     }
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--kongu-green);
+    input:focus, textarea:focus, select:focus{
+      border-color:var(--kongu-green);
       background: #fff;
       box-shadow: 0 10px 20px rgba(11, 107, 58, 0.1);
     }
 
-    .actions {
-      display: flex;
-      gap: 20px;
-      margin-top: 25px;
+    .actions{
+      display:flex;
+      gap:20px;
+      margin-top:30px;
     }
 
-    .submit-btn,
-    .reset-btn {
-      border: none;
-      border-radius: 12px;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .submit-btn, .reset-btn{
+      border:none;
+      border-radius:15px;
+      padding:20px 40px;
+      font-size:1.2rem;
+      font-weight:800;
+      cursor:pointer;
+      transition:all 0.3s ease;
     }
 
-    .submit-btn {
-      flex: 2;
+    .submit-btn{
+      flex:2;
       background: var(--kongu-green);
-      color: #fff;
+      color:#fff;
     }
 
-    .submit-btn:hover {
+    .submit-btn:hover{
       background: var(--kongu-green-dark);
       transform: translateY(-3px);
     }
 
-    .reset-btn {
-      flex: 1;
+    .reset-btn{
+      flex:1;
       background: var(--kongu-green);
-      color: #fff;
+      color:#fff;
     }
 
-    .reset-btn:hover {
+    .reset-btn:hover{
       background: var(--kongu-green-dark);
       transform: translateY(-3px);
     }
 
-    @media (max-width: 1000px) {
-      body {
-        padding: 20px 10px;
-      }
-
-      .page-wrap {
-        grid-template-columns: 1fr;
+    @media (max-width: 1000px){
+      body{ padding: 20px 10px; }
+      .page-wrap{
+        grid-template-columns:1fr;
         border-radius: 20px;
       }
-
-      .brand-panel {
-        padding: 50px 30px;
-      }
-
-      .form-card {
-        padding: 40px 25px;
-      }
-
-      .brand-title {
-        font-size: 2.2rem;
-      }
-
-      .form-header h2 {
-        font-size: 2rem;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+      .brand-panel{ padding: 50px 30px; }
+      .form-card { padding: 40px 25px; }
+      .brand-title{ font-size: 2.2rem; }
+      .form-header h2{ font-size: 2rem; }
+      .form-grid{ grid-template-columns: 1fr; gap: 20px; }
     }
 
-    @media (max-width: 480px) {
-      .brand-title {
-        font-size: 1.8rem;
-      }
-
-      .logo-badge {
-        width: 220px;
-        height: 90px;
-      }
-
-      .submit-btn,
-      .reset-btn {
-        padding: 15px 20px;
-        font-size: 1rem;
-      }
+    @media (max-width: 480px){
+      .brand-title{ font-size: 1.8rem; }
+      .logo-badge{ width: 220px; height: 90px; }
+      .submit-btn, .reset-btn{ padding: 15px 20px; font-size: 1rem; }
     }
 
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(6, 30, 16, 0.45);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 9999;
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(6, 30, 16, 0.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      z-index:9999;
     }
 
-    .modal.show {
-      display: flex;
+    .modal.show{
+      display:flex;
     }
 
-    .modal-card {
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      border-radius: 22px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-      padding: 32px 26px;
-      text-align: center;
+    .modal-card{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 30px 60px rgba(0,0,0,0.18);
+      padding:32px 26px;
+      text-align:center;
     }
 
-    .success-icon {
-      width: 78px;
-      height: 78px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(11, 107, 58, 0.12), rgba(212, 160, 23, 0.18));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .success-icon{
+      width:78px;
+      height:78px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      background:linear-gradient(135deg, rgba(11,107,58,0.12), rgba(212,160,23,0.18));
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    iframe[name="hidden_iframe"] {
-      display: none;
+    iframe[name="hidden_iframe"]{
+      display:none;
     }
   </style>
 </head>
-
 <body>
 
   <div class="page-wrap">
     <section class="brand-panel">
       <div class="brand-top">
         <div class="logo-badge">
-          <img src="images/logo.jpg" alt="Kongu Engineering College" />
-          <svg viewBox="0 0 24 24" width="5" height="45" fill="none" stroke="currentColor" stroke-width="2"
-            style="display: none;">
+           <img src="images/logo.jpg" alt="Kongu Engineering College" />
+          <svg viewBox="0 0 24 24" width="5" height="45" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
             <path d="M4 19h16"></path>
             <path d="M6 17V7l6-3 6 3v10"></path>
             <path d="M9 11h6"></path>
@@ -415,10 +376,8 @@
         <h2>Raise a Request</h2>
       </div>
 
-      <form id="supportForm"
-        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL00000KCzLx"
-        method="POST" target="hidden_iframe">
-
+      <form id="supportForm" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL00000KCzLx" method="POST" target="hidden_iframe">
+       
         <input type="hidden" name="orgid" value="00DgL00000KCzLx">
         <input type="hidden" name="retURL" value="http://kongu.ac.in">
         <input type="hidden" name="external" value="1" />
@@ -436,8 +395,7 @@
 
           <div class="field">
             <label for="email">College Email</label>
-            <input id="email" maxlength="80" name="email" size="20" type="email" required="true"
-              pattern=".*@kongu\.edu$" title="Please use your official @kongu.edu college email address." />
+<input id="email" maxlength="80" name="email" size="20" type="email" required="true" pattern=".*@kongu\.edu$" title="Please use your official @kongu.edu college email address." />
           </div>
 
           <div class="field">
@@ -446,27 +404,27 @@
           </div>
 
           <div class="field">
-            <label>Your Course / Department</label>
-            <select name="00NgL00003K8MKr" required>
-              <option value="">-- Select Your Course --</option>
-              <option value="BE-CIVIL">BE-CIVIL</option>
-              <option value="BE-CSE">BE-CSE</option>
-              <option value="MCA">MCA</option>
-              <option value="ME-CSE">ME-CSE</option>
-              <option value="MSc">MSc</option>
-              <option value="MTech-Food Technology">MTech-Food Technology</option>
-            </select>
-          </div>
+          <label>Your Course / Department</label>
+          <select name="00NgL00003K8MKr" required>
+            <option value="">-- Select Your Course --</option>
+            <option value="BE-CIVIL">BE-CIVIL</option>
+            <option value="BE-CSE">BE-CSE</option>
+            <option value="MCA">MCA</option>
+            <option value="ME-CSE">ME-CSE</option>
+            <option value="MSc">MSc</option>
+            <option value="MTech-Food Technology">MTech-Food Technology</option>
+          </select>
+        </div>
           <div class="field">
-            <label>Urgency / Priority</label>
-            <select name="priority" required>
-              <option value="">-- Select Priority --</option>
-              <option value="High">High (Urgent)</option>
-              <option value="Medium" selected>Medium (Standard)</option>
-              <option value="Low">Low (General Query)</option>
-            </select>
-          </div>
-          <div class="field full">
+          <label>Urgency / Priority</label>
+          <select name="priority" required>
+            <option value="">-- Select Priority --</option>
+            <option value="High">High (Urgent)</option>
+            <option value="Medium" selected>Medium (Standard)</option>
+            <option value="Low">Low (General Query)</option>
+          </select>
+        </div>
+           <div class="field full">
             <label>Department to Contact</label>
             <select name="00N5i00000YYYYY">
               <option value="">-- Let the system decide --</option>
@@ -483,9 +441,7 @@
 
           <div class="field full">
             <label>Detailed Description</label>
-            <textarea name="description"
-              placeholder="Provide as much detail as possible to help us resolve your issue faster..."
-              required></textarea>
+            <textarea name="description" placeholder="Provide as much detail as possible to help us resolve your issue faster..." required></textarea>
           </div>
         </div>
 
@@ -507,11 +463,9 @@
         </svg>
       </div>
       <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Ticket Received!</h3>
-      <p style="font-size: 1.1rem; color: #666;">Your support request has been logged in Salesforce. Check your college
-        email for the ticket number.</p>
+      <p style="font-size: 1.1rem; color: #666;">Your support request has been logged in Salesforce. Check your college email for the ticket number.</p>
       <div class="modal-actions" style="margin-top: 25px;">
-        <button class="close-btn" id="closeModalBtn"
-          style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold; background: #0b6b3a; color: white; border: none; border-radius: 10px; cursor: pointer;">OK</button>
+        <button class="close-btn" id="closeModalBtn" style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold; background: #0b6b3a; color: white; border: none; border-radius: 10px; cursor: pointer;">OK</button>
       </div>
     </div>
   </div>
@@ -535,5 +489,4 @@
   </script>
 
 </body>
-
 </html>
